@@ -1,11 +1,10 @@
 // ---------------------------------------------------------------------------
-// Konfigurasi klinik — UBAH NOMOR INI SEBELUM DIPAKAI PRODUKSI.
-// Nomor harus format internasional tanpa "+" dan tanpa spasi, contoh: 62812...
-// Nomor di bawah ini HANYA placeholder supaya tombol WA tidak rusak saat
-// development; ganti dengan nomor WhatsApp Business klinik yang sebenarnya.
+// Konfigurasi klinik.
+// Nomor harus format internasional tanpa "+" dan tanpa spasi.
+// Nomor WA klinik di bawah ini sudah diisi dari nomor yang diberikan Sidik.
 // ---------------------------------------------------------------------------
 export const CLINIC_NAME = 'Ruang Pulih Fisioterapi';
-export const CLINIC_WHATSAPP_NUMBER = '6280000000000'; // TODO: ganti nomor WA klinik
+export const CLINIC_WHATSAPP_NUMBER = '6289512728697'; // Nomor WA klinik dari Sidik (089512728697)
 export const CLINIC_LOCATION = 'Kemang, Jakarta Selatan';
 export const CLINIC_HOURS = 'Senin–Sabtu, 08.00–19.00';
 
