@@ -115,6 +115,10 @@ dist
 # production
 /build
 
+# Ikon PWA digenerate saat build (scripts/generate-icons.mjs), bukan disimpan di repo
+/public/icon-192.png
+/public/icon-512.png
+
 # misc
 .DS_Store
 .env.local

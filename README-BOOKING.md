@@ -15,17 +15,34 @@
 - `src/App.css` — styling form, ringkasan booking, dan tombol WA.
 - `src/App.test.jsx` — test untuk form booking dan tombol WA.
 
-## PENTING: ganti nomor WhatsApp dulu
+## Nomor WhatsApp klinik
 
-Buka `src/clinic.js` dan ganti baris ini dengan nomor WhatsApp Business
-klinik (format internasional tanpa `+`, mis. `62812...`):
+Nomor di `src/clinic.js` sudah diisi: `6289512728697` (dari `089512728697`).
+Kalau nomor klinik berubah, ganti baris `CLINIC_WHATSAPP_NUMBER` di file itu
+(format internasional tanpa `+`).
 
-```js
-export const CLINIC_WHATSAPP_NUMBER = '6280000000000'; // TODO: ganti nomor WA klinik
-```
+## PWA (install sebagai aplikasi)
 
-Sampai diganti, tombol WA dan link kirim booking masih mengarah ke nomor
-placeholder di atas.
+Situs ini sudah PWA, tanpa dependensi tambahan:
+
+- `public/manifest.json` — nama "Ruang Pulih Fisioterapi", tema hijau
+  `#244d3c`, tampil `standalone`.
+- `public/sw.js` — service worker: navigasi network-first dengan fallback
+  cache, aset same-origin cache-first. Diregistrasi hanya di production
+  (`src/index.jsx`).
+- `scripts/generate-icons.mjs` — ikon 192x192 dan 512x512 digenerate saat
+  `npm run build` (latar hijau, huruf "RP", aksen coral, maskable-safe),
+  jadi file PNG-nya tidak perlu disimpan di repo. Ikon tab browser pakai
+  `public/favicon.svg` (teks, ikut ter-push).
+
+Cara install setelah situs live (wajib HTTPS, mis. Vercel):
+
+- Android (Chrome): buka situs → menu ⋮ → "Tambahkan ke Layar Utama"
+  atau "Instal aplikasi".
+- iOS (Safari): buka situs → Bagikan → "Tambah ke Layar Utama".
+- Catatan: install penuh butuh service worker aktif + manifest valid;
+  cek di Chrome DevTools → Application → Manifest & Service Workers.
+  Booking tetap permintaan via WhatsApp, bukan konfirmasi slot otomatis.
 
 ## Cara kerja (saat ini)
 
